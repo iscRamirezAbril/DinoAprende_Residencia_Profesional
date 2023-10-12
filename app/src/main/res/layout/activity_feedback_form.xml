@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
         android:fontFamily="casual"
-        android:text="1. ¿Le agradan los juegos de la aplicación?"
+        android:text="¿Le agradan los juegos de la aplicación?"
         android:textAlignment="viewStart"
         android:textColor="#000000"
         android:textStyle="bold"
@@ -121,7 +121,7 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="88dp"
+        android:layout_width="115dp"
         android:layout_height="154dp"
         android:layout_marginStart="97dp"
         android:padding="5dp"
@@ -164,16 +164,17 @@
         android:id="@+id/lblQuestion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="306dp"
         android:layout_marginEnd="140dp"
         android:fontFamily="casual"
-        android:text="2. ¡Dejanos un comentrio!"
+        android:text="¡Dejanos un comentrio!"
         android:textAlignment="viewStart"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/whiteBackround"
-        app:layout_constraintHorizontal_bias="0.994"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="@+id/lblQuestion1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.442" />
 
@@ -195,7 +196,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/whiteBackround"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblQuestion1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.632" />
 
