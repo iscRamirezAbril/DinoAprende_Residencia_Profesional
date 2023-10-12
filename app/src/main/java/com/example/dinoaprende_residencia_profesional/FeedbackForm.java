@@ -7,7 +7,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -36,6 +35,7 @@ public class FeedbackForm extends AppCompatActivity {
             }
         });
 
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
         RadioButton radioButton1 = findViewById(R.id.option1Q1);
         RadioButton radioButton2 = findViewById(R.id.option2Q1);
         RadioButton radioButton3 = findViewById(R.id.option3Q1);
@@ -45,6 +45,18 @@ public class FeedbackForm extends AppCompatActivity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (radioGroup.getCheckedRadioButtonId() == -1) {
+                    // Ningún RadioButton está seleccionado
+                    Toast.makeText(FeedbackForm.this, "Favor de seleccionar una opción...", Toast.LENGTH_LONG);
+                    return;
+                }
+
+                String comment = editText.getText().toString();
+                if (comment.equals("")) {
+                    Toast.makeText(FeedbackForm.this, "Favor de escribir un comentario...", Toast.LENGTH_LONG);
+                    return;
+                }
+
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("message/html");
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"soportedinoaprende@gmail.com"});
@@ -63,7 +75,7 @@ public class FeedbackForm extends AppCompatActivity {
                             "\n\n Su opinión sobre la aplicación: " + editText.getText());
                 }
 
-
+                showSuccessEmailDialog();
 
                 try {
                     startActivity(Intent.createChooser(intent, "Porfavor, selecciona un correo..."));
@@ -95,6 +107,28 @@ public class FeedbackForm extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 alertDialog.dismiss();
+            }
+        });
+
+        if (alertDialog.getWindow() != null){
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        alertDialog.show();
+    }
+
+    private void showSuccessEmailDialog(){
+        ConstraintLayout dialogConstraintLayout = findViewById(R.id.layoutDialog);
+        View view = LayoutInflater.from(FeedbackForm.this).inflate(R.layout.dialog_custom2, dialogConstraintLayout);
+        Button btnGoBack = view.findViewById(R.id.btnGoBack);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(FeedbackForm.this);
+        builder.setView(view);
+        final AlertDialog alertDialog = builder.create();
+
+        btnGoBack.findViewById(R.id.btnGoBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
