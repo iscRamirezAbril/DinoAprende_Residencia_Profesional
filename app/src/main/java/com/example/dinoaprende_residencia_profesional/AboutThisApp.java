@@ -2,29 +2,26 @@ package com.example.dinoaprende_residencia_profesional;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-public class WelcomePage extends AppCompatActivity {
+public class AboutThisApp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_welcome_page);
+        setContentView(R.layout.activity_about_this_app);
 
-        ImageButton btnAbout = findViewById(R.id.btnAbout);
-
-        btnAbout.setOnClickListener(new View.OnClickListener() {
+        ImageButton btnClose = findViewById(R.id.btnClose);
+        btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WelcomePage.this, AboutThisApp.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
