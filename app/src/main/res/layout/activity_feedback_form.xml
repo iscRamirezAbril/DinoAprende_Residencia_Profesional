@@ -170,7 +170,7 @@
         android:layout_marginStart="306dp"
         android:layout_marginEnd="140dp"
         android:fontFamily="casual"
-        android:text="¡Dejanos un comentrio!"
+        android:text="¡Dejanos un comentario!"
         android:textAlignment="viewStart"
         android:textColor="#000000"
         android:textStyle="bold"
