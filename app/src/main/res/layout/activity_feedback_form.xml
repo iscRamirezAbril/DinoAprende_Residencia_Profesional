@@ -139,6 +139,7 @@
             android:fontFamily="casual"
             android:text="Mucho"
             android:textColor="@color/black"
+            android:textColorHighlight="#4CAF50"
             android:textStyle="bold" />
 
         <RadioButton
@@ -148,6 +149,7 @@
             android:fontFamily="casual"
             android:text="Poco"
             android:textColor="@color/black"
+            android:textColorHighlight="#FF4CAF50"
             android:textStyle="bold" />
 
         <RadioButton
@@ -157,6 +159,7 @@
             android:fontFamily="casual"
             android:text="Nada"
             android:textColor="@color/black"
+            android:textColorHighlight="#FF4CAF50"
             android:textStyle="bold" />
     </RadioGroup>
 
