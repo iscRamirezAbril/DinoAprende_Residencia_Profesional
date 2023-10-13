@@ -13,17 +13,21 @@
         android:theme="@style/Theme.DinoAprende_Residencia_Profesional"
         tools:targetApi="31">
         <activity
-            android:name=".FeedbackForm"
+            android:name=".RegisterForm"
             android:exported="false"
             android:screenOrientation="landscape"/>
+        <activity
+            android:name=".FeedbackForm"
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".AboutThisApp"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".WelcomePage"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

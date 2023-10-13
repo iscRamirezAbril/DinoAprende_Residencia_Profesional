@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class WelcomePage extends AppCompatActivity {
@@ -21,6 +22,7 @@ public class WelcomePage extends AppCompatActivity {
 
         ImageButton btnAbout = findViewById(R.id.btnAbout);
         ImageButton btnFeedback = findViewById(R.id.btnFeddback);
+        Button btnStart = findViewById(R.id.btnStart);
 
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +36,14 @@ public class WelcomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(WelcomePage.this, FeedbackForm.class);
+                startActivity(intent);
+            }
+        });
+
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WelcomePage.this, RegisterForm.class);
                 startActivity(intent);
             }
         });
