@@ -3,10 +3,13 @@ package com.example.dinoaprende_residencia_profesional;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +31,18 @@ public class PrincipalMenu extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
         loadUserInfo();
+
+        ImageButton btnMathQuizMinigame = findViewById(R.id.btnQuizMinigame);
+        ImageButton btnCardMinigame = findViewById(R.id.btnCardMinigame);
+        ImageButton btnPuzzleMinigame = findViewById(R.id.btnPuzzleMinigame);
+
+        btnMathQuizMinigame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PrincipalMenu.this, InstructionsQuizMinigame.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void loadUserInfo() {
