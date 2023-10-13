@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.media.Image;
 import android.os.Bundle;
@@ -49,8 +50,18 @@ public class WelcomePage extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WelcomePage.this, RegisterForm.class);
-                startActivity(intent);
+                SharedPreferences sharedPreferences = getSharedPreferences("DinoAprende", MODE_PRIVATE);
+                boolean isUserRegistered = sharedPreferences.getBoolean("isUserRegistered", false);
+
+                if (isUserRegistered) {
+                    // Si el usuario ya está registrado, redirigir a PrincipalMenu
+                    Intent intent = new Intent(WelcomePage.this, PrincipalMenu.class);
+                    startActivity(intent);
+                } else {
+                    // Si el usuario aún no está registrado, redirigir a RegisterForm
+                    Intent intent = new Intent(WelcomePage.this, RegisterForm.class);
+                    startActivity(intent);
+                }
             }
         });
     }

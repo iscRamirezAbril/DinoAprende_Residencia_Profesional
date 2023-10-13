@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,9 +35,10 @@ public class RegisterForm extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerUser();
-                Intent intent = new Intent(RegisterForm.this, PrincipalMenu.class);
-                startActivity(intent);
+                if (registerUser()) {
+                    Intent intent = new Intent(RegisterForm.this, PrincipalMenu.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -49,12 +51,12 @@ public class RegisterForm extends AppCompatActivity {
         });
     }
 
-    private void registerUser() {
+    private boolean registerUser() {
         String name = txtName.getText().toString().trim();
 
         if(name.isEmpty()) {
             Toast.makeText(RegisterForm.this, "Por favor, ingresa tu nombre", Toast.LENGTH_SHORT).show();
-            return;
+            return false;
         }
 
         String[] profileImages = {
@@ -73,9 +75,17 @@ public class RegisterForm extends AppCompatActivity {
         if (isSuccess) {
             Toast.makeText(RegisterForm.this, "¡Usuario registrado con éxito!", Toast.LENGTH_SHORT).show();
 
+            // Guardar en SharedPreferences
+            SharedPreferences sharedPreferences = getSharedPreferences("DinoAprende", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isUserRegistered", true);
+            editor.apply();
+
         } else {
             Toast.makeText(RegisterForm.this, "Error al registrar al usuario", Toast.LENGTH_SHORT).show();
         }
+
+        return isSuccess;
     }
 
     private void showExitDialog() {
