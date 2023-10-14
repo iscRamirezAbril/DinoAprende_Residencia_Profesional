@@ -1,9 +1,11 @@
 package com.example.dinoaprende_residencia_profesional
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.ImageButton
 
 class InstructionsQuizMinigame : AppCompatActivity() {
@@ -16,6 +18,12 @@ class InstructionsQuizMinigame : AppCompatActivity() {
         val btnClose: ImageButton = findViewById(R.id.btnClose)
         btnClose.setOnClickListener {
             finish()
+        }
+
+        val btnStartQuiz: Button = findViewById(R.id.btnStartQuiz)
+        btnStartQuiz.setOnClickListener{
+            val intent = Intent(this, MathQuizMenu::class.java)
+            startActivity(intent)
         }
     }
 }
