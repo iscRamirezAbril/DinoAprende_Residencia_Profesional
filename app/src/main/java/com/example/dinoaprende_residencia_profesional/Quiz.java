@@ -252,8 +252,27 @@ public class Quiz extends AppCompatActivity {
     }
 
     private void finishQuiz() {
-        Toast.makeText(this, "Puntaje final: " + score, Toast.LENGTH_LONG).show();
+        Intent resultIntent;
+
+        if (score > 0) {
+            resultIntent = new Intent(Quiz.this, WonMinigameQuiz.class);
+            resultIntent.putExtra("SCORE", score);
+        } else {
+            resultIntent = new Intent(Quiz.this, MissMinigame.class);
+        }
+
+        startActivity(resultIntent);
         finish();
+
+        updateScoreInDatabase(score);
+
+        startActivity(resultIntent);
+        finish();
+    }
+
+    private void updateScoreInDatabase(int score) {
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        dbHelper.updateUserScore(score);
     }
 
     private void showExitDialog(){

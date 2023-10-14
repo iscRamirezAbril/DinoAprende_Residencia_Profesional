@@ -501,4 +501,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query = "SELECT * FROM " + UserProfileTable.TABLE_NAME;
         return db.rawQuery(query, null);
     }
+
+    @SuppressLint("Range")
+    public void updateUserScore(int additionalScore) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.query(UserProfileTable.TABLE_NAME, new String[]{UserProfileTable.COLUMN_SCORE},
+                UserProfileTable.COLUMN_ID + "=?", new String[]{"1"},
+                null, null, null);
+        int currentScore = 0;
+        if (cursor != null && cursor.moveToFirst()) {
+            currentScore = cursor.getInt(cursor.getColumnIndex(UserProfileTable.COLUMN_SCORE));
+            cursor.close();
+        }
+
+        currentScore += additionalScore;
+
+        ContentValues cv = new ContentValues();
+        cv.put(UserProfileTable.COLUMN_SCORE, currentScore);
+
+        db.update(UserProfileTable.TABLE_NAME, cv, UserProfileTable.COLUMN_ID + " = ?", new String[]{"1"});
+    }
 }

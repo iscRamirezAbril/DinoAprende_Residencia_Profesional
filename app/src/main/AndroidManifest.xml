@@ -13,6 +13,14 @@
         android:theme="@style/Theme.DinoAprende_Residencia_Profesional"
         tools:targetApi="31">
         <activity
+            android:name=".MissMinigame"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".WonMinigameQuiz"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".Quiz"
             android:exported="false"
             android:screenOrientation="landscape" />
