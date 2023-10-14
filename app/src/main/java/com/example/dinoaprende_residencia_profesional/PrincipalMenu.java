@@ -33,13 +33,21 @@ public class PrincipalMenu extends AppCompatActivity {
         loadUserInfo();
 
         ImageButton btnMathQuizMinigame = findViewById(R.id.btnQuizMinigame);
-        ImageButton btnCardMinigame = findViewById(R.id.btnCardMinigame);
+        ImageButton btnCardsMinigame = findViewById(R.id.btnCardMinigame);
         ImageButton btnPuzzleMinigame = findViewById(R.id.btnPuzzleMinigame);
 
         btnMathQuizMinigame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PrincipalMenu.this, InstructionsQuizMinigame.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCardsMinigame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PrincipalMenu.this, InstructionsMemoryMinigame.class);
                 startActivity(intent);
             }
         });
