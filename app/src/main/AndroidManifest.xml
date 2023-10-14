@@ -13,6 +13,10 @@
         android:theme="@style/Theme.DinoAprende_Residencia_Profesional"
         tools:targetApi="31">
         <activity
+            android:name=".InstructionsPuzzleMinigame"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".MemoryCards"
             android:exported="false"
             android:screenOrientation="landscape" />

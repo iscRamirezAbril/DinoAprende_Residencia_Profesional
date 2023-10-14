@@ -51,6 +51,14 @@ public class PrincipalMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnPuzzleMinigame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PrincipalMenu.this, InstructionsPuzzleMinigame.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void loadUserInfo() {
