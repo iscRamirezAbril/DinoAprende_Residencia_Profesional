@@ -20,10 +20,10 @@ class InstructionsPuzzleMinigame : AppCompatActivity() {
             finish()
         }
 
-        /*val btnStartPuzzle: Button = findViewById(R.id.btnStartPuzzle)
+        val btnStartPuzzle: Button = findViewById(R.id.btnStartPuzzle)
         btnStartPuzzle.setOnClickListener{
-            val intent = Intent(this, MemoryCards::class.java)
+            val intent = Intent(this, PuzzleMenu::class.java)
             startActivity(intent)
-        }*/
+        }
     }
 }
