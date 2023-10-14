@@ -20,8 +20,8 @@ class InstructionsMemoryMinigame : AppCompatActivity() {
             finish()
         }
 
-        val btnStartQuiz: Button = findViewById(R.id.btnStartCards)
-        btnStartQuiz.setOnClickListener{
+        val btnStartMemory: Button = findViewById(R.id.btnStartCards)
+        btnStartMemory.setOnClickListener{
             val intent = Intent(this, MemoryCards::class.java)
             startActivity(intent)
         }
