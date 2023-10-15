@@ -1,6 +1,7 @@
 package com.example.dinoaprende_residencia_profesional
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.view.Window
@@ -8,6 +9,7 @@ import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dinoaprende_residencia_profesional.GestureDetectGridView.OnSwipeListener
 import kotlinx.android.synthetic.main.activity_puzzle.*
@@ -220,7 +222,44 @@ class Puzzle : AppCompatActivity() {
         displayTileBoard()
 
         if (isSolved) {
-            displayToast(R.string.winner)
+            val scoreIncrement = 5
+
+            val dbHelper = DatabaseHelper(this)
+            dbHelper.updateUserScore(scoreIncrement)
+
+            val intent = Intent(this, WonMinigamePuzzle::class.java)
+
+            intent.putExtra("SCORE", scoreIncrement)
+
+            startActivity(intent)
+            finish()
         }
+    }
+
+    override fun onBackPressed() {
+        showCustomDialog()
+    }
+
+    private fun showCustomDialog() {
+        val builder = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+        val view = inflater.inflate(R.layout.dialog_custom4, null)
+
+        val btnExit = view.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.btnExit)
+        val btnCancel = view.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.btnCancel)
+
+        val dialog = builder.setView(view).create()
+
+        btnExit.setOnClickListener {
+            (it.context as AppCompatActivity).finish()
+            val intent = Intent(this, PrincipalMenu::class.java)
+            startActivity(intent)
+        }
+
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 }
