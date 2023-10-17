@@ -10,20 +10,20 @@
 
     <TextView
         android:id="@+id/lblTouchContinue"
-        android:layout_width="254dp"
-        android:layout_height="95dp"
+        android:layout_width="307dp"
+        android:layout_height="120dp"
         android:fontFamily="casual"
         android:text="Toca la pantalla para continuar..."
         android:textAlignment="center"
+        android:gravity="center|bottom"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintVertical_bias="0.872" />
 
     <ImageView
         android:id="@+id/imageView2"
