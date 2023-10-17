@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DinoAprende_Residencia_Profesional</string>
+    <string name="app_name">DinoAprende</string>
     <string name="invalid_move">Invalid move</string>
     <string name="winner">YOU WIN!</string>
 </resources>
