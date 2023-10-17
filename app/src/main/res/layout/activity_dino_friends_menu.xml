@@ -1,0 +1,1034 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DinoFriendsMenu"
+    android:background="@drawable/fondo4">
+
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="52dp"
+        android:layout_height="53dp"
+        android:background="@drawable/borderbutton2"
+        android:contentDescription="NULL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043"
+        app:srcCompat="@drawable/ic_close" />
+
+    <TextView
+        android:id="@+id/lblTitleDinoFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="DinoAmigos"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.128" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="¡Consigue puntos para conocerlos a todos!"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.262" />
+
+    <ImageView
+        android:id="@+id/imgUserInfoBackground"
+        android:layout_width="115dp"
+        android:layout_height="153dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062"
+        app:srcCompat="@drawable/fondo_usuario" />
+
+    <ImageView
+        android:id="@+id/imgUserProfilePicture"
+        android:layout_width="65dp"
+        android:layout_height="66dp"
+        android:layout_margin="5dp"
+        android:scaleType="fitXY"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.079"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/lblUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="77dp"
+        android:fontFamily="casual"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgUserInfoBackground"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/imgUserInfoBackground"
+        app:layout_constraintTop_toTopOf="@+id/imgUserProfilePicture"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/lblScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="casual"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FF9800"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgUserInfoBackground"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@+id/imgUserInfoBackground"
+        app:layout_constraintTop_toTopOf="@+id/lblUserName"
+        app:layout_constraintVertical_bias="0.007" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="232dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.994">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend1"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend1"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Bebé Blue, la velociraptor\n10 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend2"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend2"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Bebé Charlie, la velociraptor\n20 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.1dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend3"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend3"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Bebé Delta, la velociraptor\n30 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend4"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend4"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Bebé Echo, la velociraptor\n40 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend5"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend5"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Bebé Dinamita, la Brachiosaurio\n50 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend6"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend6"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Rebel, la pequeña híbrido\n70 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend7"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend7"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Bumpy, la anquilosaurio\n80 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend8"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend8"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Dimorphodon\n90 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend9"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend9"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Dilophosaurio\n100 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend10"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend10"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Parasaurio\n110 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend11"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend11"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Pachy\n130 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend12"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend12"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Baryonyx\n140 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend13"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend13"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Pierce, el Kentrosaurio\n150 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend14"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend14"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Toro, el Carnotauro\n180 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend15"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend15"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Pteranodon\n200 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend16"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend16"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Charlie, la velociraptor\n250 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend17"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend17"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Delta, la velociraptor\n270 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend18"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend18"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Echo, la velociraptor\n290 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend19"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend19"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Blue, la velociraptor\n310 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend20"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend20"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Mosasaurio\n320 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend21"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend21"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Quetzal\n350 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend22"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend22"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Rexy, la Tiranosaurio Rex\n380 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend23"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend23"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Therizinosaurio\n400 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend24"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend24"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Espinosaurio\n450 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend25"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend25"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Giganotosaurio\n500 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend26"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend26"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Scorpios Rex\n550 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend27"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend27"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Indominus Rex\n600 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend28"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend28"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Indominus Rex 2da generación\n700 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend29"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend29"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Indoraptor\n800 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDinoFriend30"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#FFEFC7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dino_friend30"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.9"
+                    android:background="#796B52"
+                    android:fontFamily="casual"
+                    android:gravity="center|bottom"
+                    android:text="Indoraptor 2da generación\n900 puntos"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.5dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

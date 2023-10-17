@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class PrincipalMenu extends AppCompatActivity {
+public class DinoFriendsMenu extends AppCompatActivity {
     ImageView imgUserProfilePicture;
     TextView lblUserName, lblScore;
     DatabaseHelper db;
@@ -23,7 +23,7 @@ public class PrincipalMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_principal_menu);
+        setContentView(R.layout.activity_dino_friends_menu);
 
         imgUserProfilePicture = findViewById(R.id.imgUserProfilePicture);
         lblUserName = findViewById(R.id.lblUserName);
@@ -32,39 +32,12 @@ public class PrincipalMenu extends AppCompatActivity {
         db = new DatabaseHelper(this);
         loadUserInfo();
 
-        ImageButton btnMathQuizMinigame = findViewById(R.id.btnQuizMinigame);
-        ImageButton btnCardsMinigame = findViewById(R.id.btnCardMinigame);
-        ImageButton btnPuzzleMinigame = findViewById(R.id.btnPuzzleMinigame);
-        ImageButton btnDinoFriends = findViewById(R.id.btnDinoFriends);
+        ImageButton btnClose = findViewById(R.id.btnClose);
 
-        btnMathQuizMinigame.setOnClickListener(new View.OnClickListener() {
+        btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PrincipalMenu.this, InstructionsQuizMinigame.class);
-                startActivity(intent);
-            }
-        });
-
-        btnCardsMinigame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PrincipalMenu.this, InstructionsMemoryMinigame.class);
-                startActivity(intent);
-            }
-        });
-
-        btnPuzzleMinigame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PrincipalMenu.this, InstructionsPuzzleMinigame.class);
-                startActivity(intent);
-            }
-        });
-
-        btnDinoFriends.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PrincipalMenu.this, DinoFriendsMenu.class);
+                Intent intent = new Intent(DinoFriendsMenu.this, PrincipalMenu.class);
                 startActivity(intent);
             }
         });
