@@ -69,11 +69,9 @@ class MemoryCards : AppCompatActivity() {
         }
 
         if (indexOfSingleSelectedCard == null){
-            // 0 o 2 cartas seleccionadas previamente
             restoreCards()
             indexOfSingleSelectedCard = position
         } else {
-            // 1 carta seleccionada previamente
             checkForMatch(indexOfSingleSelectedCard!!, position)
             indexOfSingleSelectedCard = null
         }
@@ -99,22 +97,15 @@ class MemoryCards : AppCompatActivity() {
 
     private fun checkForVictory() {
         if (cards.all { it.isMatched }) {
-            val scoreIncrement = 5
-
-            // Actualizar la puntuación del usuario en la base de datos
             val dbHelper = DatabaseHelper(this)
-            dbHelper.updateUserScore(scoreIncrement)
+            dbHelper.updateUserScore(5)
 
-            // Crear un Intent para iniciar la actividad WonMinigameMemory
             val intent = Intent(this, WonMinigameMemory::class.java)
 
-            // Pasar la puntuación como un extra en el Intent
-            intent.putExtra("SCORE", scoreIncrement)
+            intent.putExtra("SCORE", 5)
 
-            // Iniciar la actividad
             startActivity(intent)
 
-            // Opcional: Si deseas finalizar la actividad MemoryCards después de redirigir al usuario
             finish()
         }
     }
@@ -124,30 +115,24 @@ class MemoryCards : AppCompatActivity() {
         val inflater = layoutInflater
         val dialogLayout = inflater.inflate(R.layout.dialog_custom4, null)
 
-        // Encuentra los botones dentro del layout
         val btnExit = dialogLayout.findViewById<AppCompatButton>(R.id.btnExit)
         val btnCancel = dialogLayout.findViewById<AppCompatButton>(R.id.btnCancel)
 
-        // Usa lateinit var aquí
         lateinit var dialog: AlertDialog
 
-        // Define el listener para el botón de salida
         btnExit.setOnClickListener {
-            // Aquí puedes iniciar la actividad PrincipalMenu
             val intent = Intent(this, PrincipalMenu::class.java)
             startActivity(intent)
-            finish() // Esto cierra la actividad actual, en este caso MemoryCards
+            finish()
         }
 
-        // Define el listener para el botón de cancelar
         btnCancel.setOnClickListener {
-            // Cierra el diálogo
             dialog.dismiss()
         }
 
         builder.setView(dialogLayout)
-        dialog = builder.create() // Aquí inicializas dialog
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT)) // Establece el fondo como transparente
-        dialog.show() // Muestra el diálogo
+        dialog = builder.create()
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.show()
     }
 }

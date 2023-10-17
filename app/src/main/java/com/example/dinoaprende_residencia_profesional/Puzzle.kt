@@ -222,14 +222,12 @@ class Puzzle : AppCompatActivity() {
         displayTileBoard()
 
         if (isSolved) {
-            val scoreIncrement = 5
-
             val dbHelper = DatabaseHelper(this)
-            dbHelper.updateUserScore(scoreIncrement)
+            dbHelper.updateUserScore(5)
 
             val intent = Intent(this, WonMinigamePuzzle::class.java)
 
-            intent.putExtra("SCORE", scoreIncrement)
+            intent.putExtra("SCORE", 5)
 
             startActivity(intent)
             finish()
