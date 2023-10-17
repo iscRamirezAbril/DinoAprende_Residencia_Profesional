@@ -1,6 +1,7 @@
 package com.example.dinoaprende_residencia_profesional;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -33,11 +34,20 @@ public class DinoFriendsMenu extends AppCompatActivity {
         loadUserInfo();
 
         ImageButton btnClose = findViewById(R.id.btnClose);
+        CardView btnDinoFriend1 = findViewById(R.id.btnDinoFriend1);
 
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DinoFriendsMenu.this, PrincipalMenu.class);
+                startActivity(intent);
+            }
+        });
+
+        btnDinoFriend1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DinoFriendsMenu.this, DinoFriendInfo.class);
                 startActivity(intent);
             }
         });
