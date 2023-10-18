@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.dinoaprende_residencia_profesional.QuizContract.*;
+import com.example.dinoaprende_residencia_profesional.DatabaseContract.*;
 
 import java.util.ArrayList;
 
@@ -65,11 +65,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 UserProfileTable.COLUMN_PROFILE_PICTURE + " TEXT" +
                 ")";
 
+        final String SQL_CREATE_DINO_FRIENDS_INFO_TABLE = "CREATE TABLE " +
+                DinoFriendsInfoTable.TABLE_NAME + " ( " +
+                DinoFriendsInfoTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                DinoFriendsInfoTable.COLUMN_DINO_NAME + " TEXT, " +
+                DinoFriendsInfoTable.COLUMN_DINO_SPECIE + " TEXT, " +
+                DinoFriendsInfoTable.COLUMN_DINO_PERIOD + " TEXT, " +
+                DinoFriendsInfoTable.COLUMN_DINO_DIET + " TEXT, " +
+                DinoFriendsInfoTable.COLUMN_DINO_TEMPERAMENT + " TEXT, " +
+                DinoFriendsInfoTable.COLUMN_DINO_DESCRIPTION + " TEXT, " +
+                DinoFriendsInfoTable.COLUMN_DINO_PHOTO + " TEXT, " +
+                DinoFriendsInfoTable.COLUMN_DINO_SCORE + " INTEGER" +
+                ")";
+
         db.execSQL(SQL_CREATE_CATEGORIES_TABLE);
         db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
         db.execSQL(SQL_CREATE_USER_PROFILE_TABLE);
+        db.execSQL(SQL_CREATE_DINO_FRIENDS_INFO_TABLE);
         fillCategoriesTable();
         fillQuestionsTable();
+        fillDinoFriendsInfoTable();
     }
 
     @Override
@@ -77,6 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + CategoriesTable.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + UserProfileTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + DinoFriendsInfoTable.TABLE_NAME);
         onCreate(db);
     }
 
@@ -453,6 +469,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "9", "13", "15", 1,
                 Question.DIFFICULTY_HARD, Category.MIXED);
         addQuestion(q75);
+    }
+
+    private void fillDinoFriendsInfoTable(){
+        DinoFriend dinoFriend1 = new DinoFriend("Tyrannosaurus Rex", "Tyrannosaurus", "Late Cretaceous", "Carnivore",
+                "Aggressive", "El Tyrannosaurus rex fue uno de los últimos dinosaurios en existir antes de la extinción masiva al final del periodo cretácico.",
+                "path_to_trex_photo", 100);
+        addDinoFriendInfo(dinoFriend1);
+    }
+
+    private void addDinoFriendInfo(DinoFriend dinoFriend){
+        ContentValues cv = new ContentValues();
+        cv.put(DinoFriendsInfoTable.COLUMN_DINO_NAME, dinoFriend.getDinoName());
+        cv.put(DinoFriendsInfoTable.COLUMN_DINO_SPECIE, dinoFriend.getDinoSpecie());
+        cv.put(DinoFriendsInfoTable.COLUMN_DINO_PERIOD, dinoFriend.getDinoPeriod());
+        cv.put(DinoFriendsInfoTable.COLUMN_DINO_DIET, dinoFriend.getDinoDiet());
+        cv.put(DinoFriendsInfoTable.COLUMN_DINO_TEMPERAMENT, dinoFriend.getDinoTemperament());
+        cv.put(DinoFriendsInfoTable.COLUMN_DINO_DESCRIPTION, dinoFriend.getDinoDescription());
+        cv.put(DinoFriendsInfoTable.COLUMN_DINO_PHOTO, dinoFriend.getDinoPhoto());
+        cv.put(DinoFriendsInfoTable.COLUMN_DINO_SCORE, dinoFriend.getDinoScore());
+        db.insert(DinoFriendsInfoTable.TABLE_NAME, null, cv);
     }
 
     private void addQuestion(Question question) {
