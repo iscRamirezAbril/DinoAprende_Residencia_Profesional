@@ -129,7 +129,7 @@ public class PrincipalMenu extends AppCompatActivity {
         TextView lblDinoFriendName = dialog.findViewById(R.id.lblDinoFriendName);
         ImageView imgDinoFriendPhoto = dialog.findViewById(R.id.imgDinoFriendPhoto);
 
-        lblDinoFriendName.setText("¡Has desbloqueado a:\n" + dino.getDinoName() + "!");
+        lblDinoFriendName.setText("¡Has desbloqueado a:\n" + "¡" + dino.getDinoName() + "!");
         int resID = getResources().getIdentifier(dino.getDinoPhoto(), "drawable", getPackageName());
         imgDinoFriendPhoto.setImageResource(resID);
 
