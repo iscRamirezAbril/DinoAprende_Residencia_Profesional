@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.app.Dialog;
 
 public class DinoFriendsMenu extends AppCompatActivity {
     ImageView imgUserProfilePicture;

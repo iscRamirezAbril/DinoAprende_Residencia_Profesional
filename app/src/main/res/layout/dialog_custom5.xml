@@ -29,17 +29,17 @@
             android:text="¡Nuevo DinoAmigo desbloqueado!"
             android:textAlignment="center"
             android:textColor="#D9F1A7"
-            android:textSize="32sp"
+            android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/lblInstructions"
+            app:layout_constraintBottom_toTopOf="@id/lblDinoFriendName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/lblInstructions"
-            android:layout_width="321dp"
-            android:layout_height="74dp"
+            android:id="@+id/lblDinoFriendName"
+            android:layout_width="323dp"
+            android:layout_height="72dp"
             android:layout_marginBottom="196dp"
             android:fontFamily="casual"
             android:gravity="center_horizontal"
@@ -47,22 +47,23 @@
             android:text="¡Has desbloqueado a:\n ¡Bebé Blue, la velociraptor!"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="22dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/lblTitle"
-            app:layout_constraintBottom_toTopOf="@id/imgAppPet"
+            app:layout_constraintBottom_toTopOf="@id/imgDinoFriendPhoto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/imgAppPet"
+            android:id="@+id/imgDinoFriendPhoto"
             android:layout_width="146dp"
             android:layout_height="125dp"
+            android:layout_marginTop="12dp"
             android:padding="10dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lblInstructions"
+            app:layout_constraintTop_toBottomOf="@id/lblDinoFriendName"
             app:srcCompat="@drawable/dino_friend1" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -81,7 +82,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgAppPet" />
+            app:layout_constraintTop_toBottomOf="@id/imgDinoFriendPhoto" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
