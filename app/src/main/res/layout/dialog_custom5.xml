@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/customDialog4"
+    android:id="@+id/customDialog5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -26,10 +26,10 @@
             android:layout_marginTop="16dp"
             android:fontFamily="casual"
             android:gravity="center_horizontal"
-            android:text="¡Atención!"
+            android:text="¡Nuevo DinoAmigo desbloqueado!"
             android:textAlignment="center"
-            android:textColor="#FFB6B6"
-            android:textSize="34sp"
+            android:textColor="#D9F1A7"
+            android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/lblInstructions"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,13 +38,13 @@
 
         <TextView
             android:id="@+id/lblInstructions"
-            android:layout_width="318dp"
-            android:layout_height="108dp"
+            android:layout_width="321dp"
+            android:layout_height="74dp"
             android:layout_marginBottom="196dp"
             android:fontFamily="casual"
             android:gravity="center_horizontal"
             android:padding="5dp"
-            android:text="Si cierra el minijuego, ¡perderá su progreso!,\n¿Estás seguro de salir?"
+            android:text="¡Has desbloqueado a:\n ¡Bebé Blue, la velociraptor!"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="22dp"
@@ -63,45 +63,25 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lblInstructions"
-            app:srcCompat="@drawable/mascota_oficial3" />
+            app:srcCompat="@drawable/dino_friend1" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnExit"
+            android:id="@+id/btnUnderstand"
             android:layout_width="173dp"
             android:layout_height="39dp"
             android:layout_margin="16dp"
-            android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/borderbutton1"
             android:fontFamily="casual"
-            android:text="Salir"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgAppPet" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnCancel"
-            android:layout_width="173dp"
-            android:layout_height="39dp"
-            android:layout_margin="16dp"
-            android:layout_marginStart="172dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/borderbutton8"
-            android:fontFamily="casual"
-            android:text="Cancelar"
+            android:text="Entendido"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintTop_toBottomOf="@id/imgAppPet"
-            app:layout_constraintVertical_bias="0.4" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgAppPet" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
