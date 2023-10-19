@@ -472,10 +472,128 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     private void fillDinoFriendsInfoTable(){
-        DinoFriend dinoFriend1 = new DinoFriend("Tyrannosaurus Rex", "Tyrannosaurus", "Late Cretaceous", "Carnivore",
-                "Aggressive", "El Tyrannosaurus rex fue uno de los últimos dinosaurios en existir antes de la extinción masiva al final del periodo cretácico.",
-                "path_to_trex_photo", 100);
+        DinoFriend dinoFriend1 = new DinoFriend("Bebé Blue, la velociraptor", "Velociraptor mongoliensis", "Cretácico Tardío", "Carnívoro",
+                "Pasivo", "Te presento a Blue, la primera bebé de velociraptor de la pandilla. Su nombre se debe a su característica franja azul que recorre todo su cuerpo. Es juguetona, y a lo largo de su entrenamiento, se han notado niveles de preocupación y amor hacia su entrenador Owen.\n\nSe dice que es la más inteligente de sus hermanas, y, sobre todo, cariñosa con su entrenador.",
+                "dino_friend1", 10);
         addDinoFriendInfo(dinoFriend1);
+        DinoFriend dinoFriend2 = new DinoFriend("Bebé Charlie, la velociraptor", "Velociraptor mongoliensis", "Cretácico Tardío", "Carnívoro",
+                "Pasivo", "Ella es Bebé Charlie, una de las integrantes de la pandilla de velociraptores. Es una de las hermanas de Blue, pero al contrario de ella, Charlie es muy inquieta e hiperactiva. Siempre tiene hambre y molesta a sus hermanas.\n\nSu entrenador Owen está ganando un lazo muy fuerte con toda la pandilla, se ha dado cuenta que, a pesar de lo inquietas que pueden ser, la inteligencia que poseen es interesante.",
+                "dino_friend2", 20);
+        addDinoFriendInfo(dinoFriend2);
+        DinoFriend dinoFriend3 = new DinoFriend("Bebé Delta, la velociraptor", "Velociraptor mongoliensis", "Cretácico Tardío", "Carnívoro",
+                "Pasivo", "Continuando con las integrantes de la pandilla de velociraptores, ella es la tercera de las hermanas, su nombre es Delta. A diferencia de las demás, Owen ha podido notar que Delta posee una agilidad y velocidad sorprendentes a pesar de su corta edad.\n\nSe dice que cuando sea mayor, Delta será la más rápida de sus 3 hermanas.",
+                "dino_friend3", 30);
+        addDinoFriendInfo(dinoFriend3);
+        DinoFriend dinoFriend4 = new DinoFriend("Bebé Echo, la velociraptor", "Velociraptor mongoliensis", "Cretácico Tardío", "Carnívoro",
+                "Pasivo", "Ella es Echo, la tercera hermana de Blue y última integrante de la pandilla de velociraptores. Ella fue la última en nacer y es la integrante a quien se le ha notado un mejor desarrollo auditivo. Esta habilidad podría ayudarla en un futuro para la caza y protección contra algún depredador.\n\nEcho se lleva muy bien con su hermana Charlie, ya que son igual de inquietas y juguetonas. Cuando las 4 sean mayores, estamos seguros de que serán una increíble manada.",
+                "dino_friend4", 40);
+        addDinoFriendInfo(dinoFriend4);
+        DinoFriend dinoFriend5 = new DinoFriend("Bebé Dinamita, la Braquiosaurus", "Brachiosaurus altithorax", "Jurásico Tardío", "Hervíboro",
+                "Pasivo", "Ella es Dinamita, una bebé Brachiosaurio muy juguetona. Es muy difícil que se esté quieta. Duerme muy poco debido a que todo el tiempo cree que es hora de jugar; su juego favorito es “las escondidas” y le encantan las bayas rojas.\n\nLos Brachiosaurios se caracterizan por ser dinosaurios herbívoros y de cuellos enormes cuando son adultos. Suelen defenderse de sus depredadores con su larga cola y enormes patas. No querrías meterte con un dinosaurio de estos.",
+                "dino_friend5", 50);
+        addDinoFriendInfo(dinoFriend5);
+        DinoFriend dinoFriend6 = new DinoFriend("Rebel, el pequeño híbrido", "Sino-Spino", "Holoceno (actualidad)", "Hervíboro",
+                "Pasivo", "¿Has escuchado la palabra “híbrido”? Híbrido quiere decir “mezcla” o “combinación” de 2 cosas o más dentro de un mismo objeto. Este es el caso de “Rebel”, un pequeñ hibrido que fue creado a base de dos especies distintas de dinosaurio: un grande y fuerte Espinosaurio y un tranquilo y pacífico Sinoceratops.\n\nSe caracteriza por ser muy juguetón con su hermana “Angel”. Se complementan uno con el otro, y si no están juntos, la diversión no es la misma.",
+                "dino_friend6", 70);
+        addDinoFriendInfo(dinoFriend6);
+        DinoFriend dinoFriend7 = new DinoFriend("Bumpy, la anquilosaurio", "Ankylosaurus", "Holoceno (actualidad)", "Hervíboro",
+                "Pasivo", "Bumpy es una anquilosaurio que nació con un cuerno más grande que el otro. Los científicos que la crearon la consideraron una anomalía, pero nosotros pensamos que es hermosa.\nSu caparazón tiene colores característicos, al igual que su piel\n\nLos anquilosaurios se caracterizan por su enorme cola que la utilizaban para defenderse de otros depredadores, al igual que su caparazón parecido al de una tortuga, rodeado de enormes púas.",
+                "dino_friend7", 80);
+        addDinoFriendInfo(dinoFriend7);
+        DinoFriend dinoFriend8 = new DinoFriend("Dimorphodon", "Dimorphodon macronyx", "Jurásico Temprano", "Carnívoro",
+                "Agresivo", "El Dimorphodon fue un dinosaurio volador que vivió hace mucho tiempo. No era realmente un dinosaurio, sino un pterosaurio, ¡un primo de los dinosaurios que podía volar! Tenía un cuerpo pequeño, pero una cabeza grande y dos tipos diferentes de dientes en su boca, de ahí su nombre que significa \"dos formas de dientes\". Imagina un animal del tamaño de un cuervo, con alas y una cola larga, ¡y tendrás una idea de cómo lucía el Dimorphodon!",
+                "dino_friend8", 90);
+        addDinoFriendInfo(dinoFriend8);
+        DinoFriend dinoFriend9 = new DinoFriend("Dilophosaurio", "Dilophosaurus watherilli", "Jurásico Temprano", "Carnívoro",
+                "Agresivo", "El Dilophosaurus era un dinosaurio carnívoro que vivió durante el período Jurásico. Tenía una cresta doble en su cabeza, como dos abanicos, lo que lo hacía ver muy especial. A pesar de que en algunas películas se le muestra escupiendo veneno, no hay evidencia real de que pudiera hacer eso. ¡Piensa en un dinosaurio del tamaño de un carro con un sombrero festivo en la cabeza!",
+                "dino_friend9", 100);
+        addDinoFriendInfo(dinoFriend9);
+        DinoFriend dinoFriend10 = new DinoFriend("Parasaurio", "P. walkeri", "Cretácico Tardío", "Hervíboro",
+                "Pasivo", "Este amigable herbívoro masticaba plantas con su pico sin dientes. Su larga cresta podría haberle ayudado a comunicarse con sonidos, ¡como una trompeta gigante! Solían viajar en manadas y sus crestas no solo servían para comunicarse, sino para defenderse otros depredadores también.",
+                "dino_friend10", 110);
+        addDinoFriendInfo(dinoFriend10);
+
+        DinoFriend dinoFriend11 = new DinoFriend("Pachy", "Pachycephalosaurus wyomingensis", "Cretácico Tardío", "Hervíboro",
+                "Pasivo", "Con una dieta a base de plantas, este dinosaurio tenía una cabeza dura que quizás usaba para chocar con otros Pachys en competencias o para defenderse de depredadores. No eran agresivos, pero si los provocaban, era mejor correr.",
+                "dino_friend11", 130);
+        addDinoFriendInfo(dinoFriend11);
+        DinoFriend dinoFriend12 = new DinoFriend("Baryonyx", "Baryonyx walkeri", "Cretácico Temprano", "Carnívoro",
+                "Agresivo", "Era un cazador especializado: con sus garras y dientes afilados, atrapaba peces en los ríos. ¡El pescador experto de la era de los dinosaurios! Era un dinosaurio solitario y, sobre todo, muy territorial, no querrías acercarte a el por nada en el mundo, ¡y tampoco tomar alguno de sus peces!",
+                "dino_friend12", 140);
+        addDinoFriendInfo(dinoFriend12);
+        DinoFriend dinoFriend13 = new DinoFriend("Pierce, el Kentrosaurio", "Kentrosaurus aethiopicus", "Jurásico Tardío", "Herbívoro",
+                "Pasivo", "Pierce es un Kentroaurio muy tranquilo, pero que se asusta con facilidad; es una especie de dinosaurio hervíboro que come plantas. Es pariente del Estegosaurio y tiene picos afilados en su cuerpo para protegerse de los carnívoros. Su entrenadora estuvo trabajando en una investigación para poder tratar de comunicarse con él, ¡y lo ha logrado!",
+                "dino_friend13", 150);
+        addDinoFriendInfo(dinoFriend13);
+        DinoFriend dinoFriend14 = new DinoFriend("Toro, el Carnotauro", "Carnotaurus sastrei", "Cretácico Tardío", "Carnívoro",
+                "Agresivo", "Toro, un Carnotauro con cuernos pequeños y una mandíbula poderosa, le encanta correr y embestir a sus presas o amenazas. Es un dinosaurio bastante veloz a pesar de su tamaño y muy ruidoso, siempre lo escucharás venir, no es nada sigiloso. Su dieta se basa en carne, por lo que debes tener cuidado.",
+                "dino_friend14", 180);
+        addDinoFriendInfo(dinoFriend14);
+        DinoFriend dinoFriend15 = new DinoFriend("Pteranodon", "Peteranodon longiceps", "Cretácico", "Carnívoro",
+                "Agresivo", "El Pteranodon se caracterizaba por sus enormes alas que le permitían volar y planear largas distancias sin ningún descanso. Su dieta es a base de carne, sobre todo, de peces. Lograba atraparlos con su enorme y puntiagudo pico sin dientes; era agresivo y territorial. Viajaba en grandes manadas y le era fácil escapar de depredadores.",
+                "dino_friend15", 200);
+        addDinoFriendInfo(dinoFriend15);
+        DinoFriend dinoFriend16 = new DinoFriend("Charlie, la velociraptor", "Velociraptor mongoliensis", "Cretácico Tardío", "Carnívoro",
+                "Agresivo", "Ha pasado un tiempo, tanto, que los integrantes de la pandilla de velociraptores, ¡ya son adultos! ¿Recuerdas a Charlie? De bebé fue muy inquieta, pero ahora que es mayor, ¡lo sigue siendo! Su actitud nunca cambió, pero de igual manera, así la queremos.\n\nCharlie ha desarrollado una increíble velocidad y sentido del olfato, ella podría detectar tu olor a kilómetros de distancia, esto le ayudaría a cazar para conseguir alimento.",
+                "dino_friend16", 250);
+        addDinoFriendInfo(dinoFriend16);
+        DinoFriend dinoFriend17 = new DinoFriend("Delta, la velociraptor", "Velociraptor mongoliensis", "Cretácico Tardío", "Carnívoro",
+                "Agresivo", "Te presento a Delta. Ha crecido mucho desde la última vez que la vimos, ¿no lo crees? Ahora que es adulta, se caracteriza por su hermoso color de piel verdoso con ligeras franjas negras.\nConforme fue avanzando su crecimiento, mejoró mucho su agilidad y velocidad, ¡lo que la hace la integrante de la pandilla más veloz de las 4!",
+                "dino_friend17", 270);
+        addDinoFriendInfo(dinoFriend17);
+        DinoFriend dinoFriend18 = new DinoFriend("Echo, la velociraptor", "Velociraptor mongoliensis", "Cretácico Tardío", "Carnívoro",
+                "Agresivo", "Continuamos con Echo, la integrante #3 de la pandilla. Como puedes notar, ahora que es mayor, ha desarrollado un notable color naranja en su piel, complementado con bastantes franjas negras a lo largo de su cuerpo, ¡parece un tigre! ¿No lo crees? Las habilidades que ha desarrollado durante su entrenamiento son el sigilo y sorprendentes saltos para atrapar a su presa. ¡Definitivamente ella sobreviviría sin la ayuda de sus hermanas!",
+                "dino_friend18", 290);
+        addDinoFriendInfo(dinoFriend18);
+        DinoFriend dinoFriend19 = new DinoFriend("Blue, la velociraptor", "Velociraptor mongoliensis", "Cretácico Tardío", "Carnívoro",
+                "Agresivo", "La última integrante de la pandilla, Blue. Desde que era bebé, se caracteriza por su franja azul que recorre su cuerpo. Todos supondrían que, ahora que es adulta, se ha vuelto agresiva con cualquiera que se le acerque, y si, lo es porque protege su territorio, excepto con su entrenador Owen; ellos 2 hacen un excelente equipo.\n\nSe sabe que Blue se ha vuelto la líder de la manada, y haría cualquier cosa por proteger a sus hermanas y a su entrenador.",
+                "dino_friend19", 310);
+        addDinoFriendInfo(dinoFriend19);
+        DinoFriend dinoFriend20 = new DinoFriend("Mosasaurio", "Mosasaurus maximus", "Cretácico Tardío", "Carnívoro",
+                "Agresivo", "Se dice que este animal acuático era el rey de los océanos. Tenía un tamaño increíble, más grande que un Megalodón. Este reptil marino se alimentaba de peces y otros animales marinos; una vez que tenía a su presa entre sus dientes, le era imposible escapar. Su enorme cola le ayudaba a propulsarse sobre el agua, mientras que sus aletas eran útiles para conducir.",
+                "dino_friend20", 320);
+        addDinoFriendInfo(dinoFriend20);
+
+        DinoFriend dinoFriend21 = new DinoFriend("Quetzal", "Quetzalcoatlus northropi", "Cretácico Tardío", "Carnívoro",
+                "Agresivo", "Su nombre completo es “Quetzalcoatlus”, llamado así por la deidad azteca Quetzalcóatl, la serpiente emplumada, es un género de pterosaurios pterodactiloideos, y el segundo de los animales voladores más grandes conocidos de todos los tiempos, superado por el Hatzegopteryx.\n\nPodía llegar a medir hasta 12 metros de largo. Se dice que se alimentaban de carne, lo cual es increíble que estos animales pudieron masticar carne con un pico que no contaba con dientes.",
+                "dino_friend21", 350);
+        addDinoFriendInfo(dinoFriend21);
+        DinoFriend dinoFriend22 = new DinoFriend("Rexy, la Tiranosaurio Rex", "Tyrannosaurus rex", "Cretácico Tardío", "Carnívoro",
+                "Agresivo", "Conoce a Rexy, la poderosa Tiranosaurio Rex, también conocida como “Roberta”. Ella es conocida por sus cicatrices que lleva en todo el cuerpo, resultado de todas las aventuras y enfrentamientos que ha tenido a lo largo de los años.\nLos Tiranosaurio Rex son enormes dinosaurios carnívoros que se alimentaban de carne, eran solitarios y territoriales, podían llegar a medir hasta 16 metros de largo y 8 metros de alto, ¿te imaginas ver uno en la vida real?",
+                "dino_friend22", 380);
+        addDinoFriendInfo(dinoFriend22);
+        DinoFriend dinoFriend23 = new DinoFriend("Therizinosaurio", "Therizinosaurus cheloniformis", "Cretácico Tardío", "Omnívoro",
+                "Agresivo", "El Therizinosaurio, un dinosaurio conocido por sus largas y afiladas garras que le permitían defender su territorio. Este animal es omnívoro, es decir, se alimentaba de carne y plantas.\nPodía llegar a medir hasta 10 metros de largo y 5 metros de altura, con un peso de 3 toneladas. Debido a lo territorial que podía ser, no querrías encontrarte con uno de ellos",
+                "dino_friend23", 400);
+        addDinoFriendInfo(dinoFriend23);
+        DinoFriend dinoFriend24 = new DinoFriend("Espinosaurio", "Spinosaurus aegyptiacus", "Cretáceo Inferior", "Carnívoro",
+                "Agresivo", "El poderoso e intimidante Espinosaurio. Se dice era más grande que el Rex y que eran rivales. Podían llegar a medir hasta 18 metros de longitud y pesar de 7 a 9 toneladas. Su característica vela que tenían en sus espaldas les permitían desplazarse por el agua, ayudándolos a ser veloces cazar con mayor facilidad. No se sabe con exactitud si se alimentaba de animales terrestres o peces, pero lo que sí, es que era carnívoro y muy agresivo.",
+                "dino_friend24", 450);
+        addDinoFriendInfo(dinoFriend24);
+        DinoFriend dinoFriend25 = new DinoFriend("Giganotosaurio", "Giganotosaurus carolinii", "Cretácico Medio", "Carnívoro",
+                "Agresivo", "Te presento al Giganotosaurio. Su nombre quiere decir “reptil gigante del sur”. Se dice que este gran carnívoro podía llegar a medir entre 13 y 14 metros de longitud y entre 5 a 9 metros de altura. Pesaba entre 6.5 y 11 toneladas, ¡vaya que era pesado! Su apariencia era parecida a la de un Rex debido a que caminaba en 2 patas e igual contaba con 2 brazos delanteros que le permitían dar fuertes rasguños.",
+                "dino_friend25", 500);
+        addDinoFriendInfo(dinoFriend25);
+        DinoFriend dinoFriend26 = new DinoFriend("Scorpios Rex", "Scorpius rex", "Holoceno (Actualidad)", "Carnívoro",
+                "Agresivo", "También conocido como “Experimento E750”, no es un dinosaurio que realmente existió, sino que fue creado genéticamente por el Dr. Wu. Su nombre quiere decir “Rey Escorpión”, y fue creado a base de ADN de Tiranosaurio Rex, Velociraptor, Carnotauro, entre otras especies. Se caracteriza por sus espinas que lleva por todo el cuerpo que utiliza para defenderse, ¡cuidado que son venenosas! Se sabe que la luz lo hipnotiza.",
+                "dino_friend26", 550);
+        addDinoFriendInfo(dinoFriend26);
+        DinoFriend dinoFriend27 = new DinoFriend("Indominus Rex", "Indominus rex", "Holoceno (Actualidad)", "Carnívoro",
+                "Agresivo", "Ella es la “Indominus Rex”, que nombre tan intimidante, ¿no es así? Su nombre quiere decir “Rey Indomable”, lo que lo hace aún más intimidante. Es una especie creada genéticamente con el ADN de otras especies, al igual que el “Scorpios Rex”. Este monstruo es conocida por su notable color blanco de su piel, sus enormes brazos y garras, y sus temibles dientes. Su comportamiento es extremadamente agresivo y se alimenta de carne.",
+                "dino_friend27", 600);
+        addDinoFriendInfo(dinoFriend27);
+        DinoFriend dinoFriend28 = new DinoFriend("Indominus Rex 2da generación", "Indominus rex", "Holoceno (Actualidad)", "Carnívoro",
+                "Agresivo", "Si la Indominus Rex te intimidó, espera a que te presente la generación 2 de este animal. Igual de temible que la original, pero más fuerte y ágil que cualquier otro dinosaurio, caracterizada por su patrón de color rojo que recorre todo su cuerpo, desde su cabeza, hasta su cola. Ningún animal ni dinosaurio es rival para esta segunda Indominus. Debido a su temperamento, actualmente se encuentra en cautiverio.",
+                "dino_friend28", 700);
+        addDinoFriendInfo(dinoFriend28);
+        DinoFriend dinoFriend29 = new DinoFriend("Indoraptor", "Indominus Rex + Utahraptor", "Holoceno (Actualidad)", "Carnívoro",
+                "Agresivo", "El Indoraptor, una especie que muchos no la toman como un dinosaurio, sino como un monstruo. Fue creado para utilizarlo como arma biológica y armamento militar, esto para remplazar armamento militar y soldados, mala idea, ¿verdad? Fue creado a base de ADN de Indominus Rex, Velociraptor y un mamífero que se desconoce. Su temperamento era extremadamente agresivo, pero su inteligencia era inigualable, ¡era más inteligente que Blue!",
+                "dino_friend29", 800);
+        addDinoFriendInfo(dinoFriend29);
+        DinoFriend dinoFriend30 = new DinoFriend("Indoraptor 2da generación", "Indominus Rex + Utahraptor", "Holoceno (Actualidad)", "Carnívoro",
+                "Agresivo", "Increíble que hayas llegado hasta acá, felicidades! Veo que te gustan los dinosaurios. Te presento al último de la lista: El Indoraptor generación 2. Si, leíste bien, generación 2. Más fuerte, más veloz, el doble de inteligente que su primera generación. Caracterizada por su piel color blanco con su franja de color azul que recorre todo su cuerpo. Fue creada genéticamente por el doctor Henry Wu mediante el uso de ADN de Indominus Rex y la velociraptor Blue.",
+                "dino_friend30", 900);
+        addDinoFriendInfo(dinoFriend30);
     }
 
     private void addDinoFriendInfo(DinoFriend dinoFriend){

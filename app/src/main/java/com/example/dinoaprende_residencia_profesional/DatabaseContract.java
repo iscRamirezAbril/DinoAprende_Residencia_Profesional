@@ -24,7 +24,7 @@ public final class DatabaseContract {
     }
 
     public static class DinoFriendsInfoTable implements BaseColumns {
-        public static final String TABLE_NAME = "DinoFriendsInfo";
+        public static final String TABLE_NAME = "dino_friends_info";
         public static final String COLUMN_DINO_NAME = "dinoName";
         public static final String COLUMN_DINO_SPECIE = "dinoSpecie";
         public static final String COLUMN_DINO_PERIOD = "dinoPeriod";
