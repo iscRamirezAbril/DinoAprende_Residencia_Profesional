@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/dino_friend1" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/lblDescription"
         android:layout_width="288dp"
         android:layout_height="268dp"
         android:fontFamily="casual"

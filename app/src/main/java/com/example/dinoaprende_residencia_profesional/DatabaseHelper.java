@@ -18,19 +18,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_SCORE = "score";
 
-    private static  DatabaseHelper instance;
-    private SQLiteDatabase db;
-
-    public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
-
     public static class UserProfileTable {
         public static final String TABLE_NAME = "user_profile";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_NAME = "name";
         public static final String COLUMN_SCORE = "score";
         public static final String COLUMN_PROFILE_PICTURE = "profile_picture";
+    }
+
+    private static  DatabaseHelper instance;
+    private SQLiteDatabase db;
+
+    public DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
@@ -648,6 +648,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         c.close();
         return questionList;
+    }
+
+    @SuppressLint("Range")
+    public DinoFriend getDinoFriendFromDatabase(int id) {
+        DinoFriend dinoFriend = null;
+        db = getReadableDatabase();
+
+        Cursor c = db.rawQuery("SELECT * FROM " + DinoFriendsInfoTable.TABLE_NAME +
+                " WHERE " + DinoFriendsInfoTable._ID + " = ?", new String[]{String.valueOf(id)});
+
+        if (c.moveToFirst()) {
+            String dinoName = c.getString(c.getColumnIndex(DinoFriendsInfoTable.COLUMN_DINO_NAME));
+            String dinoSpecie = c.getString(c.getColumnIndex(DinoFriendsInfoTable.COLUMN_DINO_SPECIE));
+            String dinoPeriod = c.getString(c.getColumnIndex(DinoFriendsInfoTable.COLUMN_DINO_PERIOD));
+            String dinoDiet = c.getString(c.getColumnIndex(DinoFriendsInfoTable.COLUMN_DINO_DIET));
+            String dinoTemperament = c.getString(c.getColumnIndex(DinoFriendsInfoTable.COLUMN_DINO_TEMPERAMENT));
+            String dinoDescription = c.getString(c.getColumnIndex(DinoFriendsInfoTable.COLUMN_DINO_DESCRIPTION));
+            String dinoPhoto = c.getString(c.getColumnIndex(DinoFriendsInfoTable.COLUMN_DINO_PHOTO));
+            int dinoScore = c.getInt(c.getColumnIndex(DinoFriendsInfoTable.COLUMN_DINO_SCORE));
+
+            dinoFriend = new DinoFriend(dinoName, dinoSpecie, dinoPeriod, dinoDiet,
+                    dinoTemperament, dinoDescription, dinoPhoto, dinoScore);
+        }
+
+        c.close();
+        return dinoFriend;
     }
 
     public Cursor getUserData() {

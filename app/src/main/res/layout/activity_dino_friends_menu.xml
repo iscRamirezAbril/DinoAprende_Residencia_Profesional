@@ -135,6 +135,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="1"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -165,6 +167,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="2"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -195,6 +199,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="3"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -225,6 +231,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="4"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -255,6 +263,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="5"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -285,6 +295,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="6"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -315,6 +327,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="7"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -345,6 +359,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="8"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -375,6 +391,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="9"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -405,6 +423,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="10"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -435,6 +455,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="11"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -465,6 +487,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="12"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -495,6 +519,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="13"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -525,6 +551,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="14"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -555,6 +583,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="15"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -585,6 +615,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="16"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -615,6 +647,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="17"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -645,6 +679,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="18"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -675,6 +711,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="19"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -705,6 +743,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="20"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -735,6 +775,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="21"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -765,6 +807,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="22"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -795,6 +839,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="23"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -825,6 +871,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="24"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -855,6 +903,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="25"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -885,6 +935,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="26"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -915,6 +967,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="27"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -945,6 +999,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="28"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -975,6 +1031,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="29"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 
@@ -1005,6 +1063,8 @@
                 android:layout_height="200dp"
                 android:layout_margin="15dp"
                 android:elevation="5dp"
+                android:tag="30"
+                android:onClick="onDinoButtonPressed"
                 app:cardBackgroundColor="#FFEFC7"
                 app:cardCornerRadius="15dp">
 

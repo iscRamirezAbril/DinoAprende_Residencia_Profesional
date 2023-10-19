@@ -43,14 +43,15 @@ public class DinoFriendsMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
-        btnDinoFriend1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DinoFriendsMenu.this, DinoFriendInfo.class);
-                startActivity(intent);
-            }
-        });
+    public void onDinoButtonPressed(View view) {
+        // Suponiendo que el tag del botón es el ID del dinosaurio en tu base de datos
+        int dinoId = Integer.parseInt(view.getTag().toString());
+
+        Intent intent = new Intent(this, DinoFriendInfo.class);
+        intent.putExtra("DINO_ID", dinoId);
+        startActivity(intent);
     }
 
     private void loadUserInfo() {
