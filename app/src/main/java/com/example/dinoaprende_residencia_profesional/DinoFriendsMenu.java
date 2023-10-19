@@ -6,6 +6,8 @@ import androidx.cardview.widget.CardView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -32,9 +34,9 @@ public class DinoFriendsMenu extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
         loadUserInfo();
+        updateDinoAccess();
 
         ImageButton btnClose = findViewById(R.id.btnClose);
-        CardView btnDinoFriend1 = findViewById(R.id.btnDinoFriend1);
 
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +48,6 @@ public class DinoFriendsMenu extends AppCompatActivity {
     }
 
     public void onDinoButtonPressed(View view) {
-        // Suponiendo que el tag del botón es el ID del dinosaurio en tu base de datos
         int dinoId = Integer.parseInt(view.getTag().toString());
 
         Intent intent = new Intent(this, DinoFriendInfo.class);
@@ -67,5 +68,41 @@ public class DinoFriendsMenu extends AppCompatActivity {
             lblScore.setText("Puntos: " + String.valueOf(score));
         }
         cursor.close();
+    }
+
+    private void updateDinoAccess() {
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        Cursor cursor = db.getUserData();
+        if (cursor.moveToFirst()) {
+            @SuppressLint("Range") int score = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.UserProfileTable.COLUMN_SCORE));
+            for (int i = 1; i <= 30; i++) {
+                DinoFriend dino = dbHelper.getDinoFriendFromDatabase(i);
+                if (dino != null) {
+                    int dinoRequiredScore = dino.getDinoScore();
+                    CardView cardView = findViewById(getResources().getIdentifier("btnDinoFriend" + i, "id", getPackageName()));
+                    ImageView dinoImage = (ImageView) cardView.getChildAt(0);
+                    TextView dinoName = (TextView) cardView.getChildAt(1);
+
+                    if (score < dinoRequiredScore) {
+                        // Si el usuario no tiene suficientes puntos, muestra el candado y "????"
+                        dinoImage.setImageResource(R.drawable.ic_lock);
+                        dinoName.setText("????");
+                        cardView.setCardBackgroundColor(Color.parseColor("#A9A9A9"));
+                        dinoName.setBackgroundColor(Color.parseColor("#565656"));
+                        cardView.setOnClickListener(null);
+                    } else {
+                        int resID = getResources().getIdentifier(dino.getDinoPhoto(), "drawable", getPackageName());
+                        dinoImage.setImageResource(resID);
+                        dinoName.setText(dino.getDinoName() + "\n" + dinoRequiredScore + " puntos");
+                        cardView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                onDinoButtonPressed(v);
+                            }
+                        });
+                    }
+                }
+            }
+        }
     }
 }
