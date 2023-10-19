@@ -61,20 +61,20 @@
 
     <TextView
         android:id="@+id/lblDescription"
-        android:layout_width="288dp"
-        android:layout_height="268dp"
+        android:layout_width="287dp"
+        android:layout_height="284dp"
         android:fontFamily="casual"
         android:gravity="center|center"
         android:text="¿Conoces a Bebé Blue? ¡Es un dinosaurio súper especial! Imagina un velociraptor, pero en versión bebé. Con su piel de color azulito y ojitos curiosos, Bebé Blue es un pequeño dinosaurio que es muy juguetón y travieso. Es como un perrito, pero en versión de dinosaurio. ¡Es tan tierno que querrías tenerlo como mascota!\n\nSe dice que es la más inteligente de sus hermanas, y sobre todo, cariñosa con su entrenador Owen."
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="13.3sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toEndOf="@+id/imgDinoFriendCardInfoBackground"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.419" />
+        app:layout_constraintVertical_bias="0.45" />
 
     <TextView
         android:id="@+id/lblPeriod"
