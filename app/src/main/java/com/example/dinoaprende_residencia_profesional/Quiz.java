@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -26,6 +27,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import android.graphics.drawable.GradientDrawable;
+import android.media.MediaPlayer;
 
 public class Quiz extends AppCompatActivity {
     private DatabaseHelper dbHelper;
@@ -56,6 +58,8 @@ public class Quiz extends AppCompatActivity {
 
     private GradientDrawable defaultBackground;
     private GradientDrawable selectedBackground;
+    private MediaPlayer soundPlayer;
+    private MediaPlayer backgroundMusicPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,10 @@ public class Quiz extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_quiz);
+
+        backgroundMusicPlayer = MediaPlayer.create(Quiz.this, R.raw.minigame_background_music);
+        backgroundMusicPlayer.setLooping(true);
+        backgroundMusicPlayer.start();
 
         textViewQuestion = findViewById(R.id.txtQuestion);
         textViewQuestionCount = findViewById(R.id.lblNumQuestion);
@@ -207,6 +215,9 @@ public class Quiz extends AppCompatActivity {
         countDownTimer.cancel();
         if (selectedOption == currentQuestion.getAnswerNr()){
             score++;
+            playCorrectAnswerSound();
+        } else {
+            playWrongAnswerSound();
         }
         selectedOption = 0;
         showSolution();
@@ -275,7 +286,7 @@ public class Quiz extends AppCompatActivity {
         dbHelper.updateUserScore(score);
     }
 
-    private void showExitDialog(){
+    private void showExitDialog() {
         ConstraintLayout dialogConstraintLayout = findViewById(R.id.layoutDialog);
         View view = LayoutInflater.from(Quiz.this).inflate(R.layout.dialog_custom4, dialogConstraintLayout);
         Button btnExit = view.findViewById(R.id.btnExit);
@@ -284,25 +295,85 @@ public class Quiz extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(Quiz.this);
         builder.setView(view);
         final AlertDialog alertDialog = builder.create();
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alertDialog.show();
+
+        soundPlayer = MediaPlayer.create(Quiz.this, R.raw.stop);
 
         btnExit.findViewById(R.id.btnExit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopAndReleaseMediaPlayer();
+                stopBackgroundMusic();
                 Intent intent = new Intent(Quiz.this, PrincipalMenu.class);
                 startActivity(intent);
             }
         });
 
-        btnCancel.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
+        btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopAndReleaseMediaPlayer();
                 alertDialog.dismiss();
             }
         });
 
-        if (alertDialog.getWindow() != null){
-            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                stopAndReleaseMediaPlayer();
+            }
+        });
+
+        try {
+            soundPlayer.start();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
         alertDialog.show();
+    }
+
+    private void stopAndReleaseMediaPlayer() {
+        if (soundPlayer != null) {
+            try {
+                if (soundPlayer.isPlaying()) {
+                    soundPlayer.stop();
+                }
+                soundPlayer.release();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                soundPlayer = null;
+            }
+        }
+    }
+
+    private void playCorrectAnswerSound() {
+        stopAndReleaseMediaPlayer();
+        soundPlayer = MediaPlayer.create(this, R.raw.correct_answer);
+        soundPlayer.setOnCompletionListener(MediaPlayer::release);
+        soundPlayer.start();
+    }
+
+    private void playWrongAnswerSound() {
+        stopAndReleaseMediaPlayer();
+        soundPlayer = MediaPlayer.create(this, R.raw.wrong_answer);
+        soundPlayer.setOnCompletionListener(MediaPlayer::release);
+        soundPlayer.start();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopAndReleaseMediaPlayer();
+        stopBackgroundMusic();
+    }
+
+    private void stopBackgroundMusic() {
+        if (backgroundMusicPlayer != null) {
+            backgroundMusicPlayer.release();
+            backgroundMusicPlayer = null;
+        }
     }
 }

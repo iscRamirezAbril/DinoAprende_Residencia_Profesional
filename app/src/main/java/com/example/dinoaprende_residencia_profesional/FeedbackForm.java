@@ -17,8 +17,10 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.media.MediaPlayer;
 
 public class FeedbackForm extends AppCompatActivity {
+    private MediaPlayer soundPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +94,17 @@ public class FeedbackForm extends AppCompatActivity {
         Button btnUnderstand = view.findViewById(R.id.btnUnderstand);
         Button btnCancel = view.findViewById(R.id.btnCancel);
 
+        // Añade el sonido aquí:
+        soundPlayer = MediaPlayer.create(this, R.raw.stop);
+        soundPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+                soundPlayer = null;
+            }
+        });
+        soundPlayer.start();
+
         AlertDialog.Builder builder = new AlertDialog.Builder(FeedbackForm.this);
         builder.setView(view);
         final AlertDialog alertDialog = builder.create();
@@ -99,6 +112,11 @@ public class FeedbackForm extends AppCompatActivity {
         btnUnderstand.findViewById(R.id.btnUnderstand).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (soundPlayer != null) {
+                    soundPlayer.stop();
+                    soundPlayer.release();
+                    soundPlayer = null;
+                }
                 finish();
             }
         });
@@ -106,6 +124,11 @@ public class FeedbackForm extends AppCompatActivity {
         btnCancel.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (soundPlayer != null) {
+                    soundPlayer.stop();
+                    soundPlayer.release();
+                    soundPlayer = null;
+                }
                 alertDialog.dismiss();
             }
         });
@@ -121,6 +144,16 @@ public class FeedbackForm extends AppCompatActivity {
         View view = LayoutInflater.from(FeedbackForm.this).inflate(R.layout.dialog_custom2, dialogConstraintLayout);
         Button btnGoBack = view.findViewById(R.id.btnGoBack);
 
+        soundPlayer = MediaPlayer.create(this, R.raw.success);
+        soundPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+                soundPlayer = null;
+            }
+        });
+        soundPlayer.start();
+
         AlertDialog.Builder builder = new AlertDialog.Builder(FeedbackForm.this);
         builder.setView(view);
         final AlertDialog alertDialog = builder.create();
@@ -128,6 +161,11 @@ public class FeedbackForm extends AppCompatActivity {
         btnGoBack.findViewById(R.id.btnGoBack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (soundPlayer != null) {
+                    soundPlayer.stop();
+                    soundPlayer.release();
+                    soundPlayer = null;
+                }
                 finish();
             }
         });

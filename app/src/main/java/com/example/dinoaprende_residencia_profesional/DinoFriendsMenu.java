@@ -6,7 +6,6 @@ import androidx.cardview.widget.CardView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -15,12 +14,13 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.app.Dialog;
+import android.media.MediaPlayer;
 
 public class DinoFriendsMenu extends AppCompatActivity {
     ImageView imgUserProfilePicture;
     TextView lblUserName, lblScore;
     DatabaseHelper db;
+    private static MediaPlayer mediaPlayer; // Haciéndolo estático
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,21 @@ public class DinoFriendsMenu extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dino_friends_menu);
+
+        if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(this, R.raw.jurassic_world_song1);
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    mp.release();
+                    mediaPlayer = null;
+                }
+            });
+        }
+
+        if (!mediaPlayer.isPlaying()) {
+            mediaPlayer.start();
+        }
 
         imgUserProfilePicture = findViewById(R.id.imgUserProfilePicture);
         lblUserName = findViewById(R.id.lblUserName);
@@ -38,12 +53,17 @@ public class DinoFriendsMenu extends AppCompatActivity {
         updateDinoAccess();
 
         ImageButton btnClose = findViewById(R.id.btnClose);
-
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mediaPlayer != null) {
+                    mediaPlayer.stop();
+                    mediaPlayer.release();
+                    mediaPlayer = null;
+                }
                 Intent intent = new Intent(DinoFriendsMenu.this, PrincipalMenu.class);
                 startActivity(intent);
+                finish(); // Finaliza esta actividad
             }
         });
     }
@@ -85,7 +105,6 @@ public class DinoFriendsMenu extends AppCompatActivity {
                     TextView dinoName = (TextView) cardView.getChildAt(1);
 
                     if (score < dinoRequiredScore) {
-                        // Si el usuario no tiene suficientes puntos, muestra el candado y "????"
                         dinoImage.setImageResource(R.drawable.ic_lock);
                         dinoName.setText("????");
                         cardView.setCardBackgroundColor(Color.parseColor("#A9A9A9"));
@@ -105,5 +124,11 @@ public class DinoFriendsMenu extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // El mediaPlayer ahora se maneja en otras partes del código, por lo que no necesitamos hacer nada aquí
     }
 }

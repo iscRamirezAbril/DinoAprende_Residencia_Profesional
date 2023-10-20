@@ -15,17 +15,23 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
 import kotlinx.android.synthetic.main.activity_memory_cards.*
 import com.example.dinoaprende_residencia_profesional.R.drawable.*
+import android.media.MediaPlayer
 
 class MemoryCards : AppCompatActivity() {
     private lateinit var buttons: List<ImageButton>
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
+    private var backgroundMusicPlayer: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_memory_cards)
+
+        backgroundMusicPlayer = MediaPlayer.create(this, R.raw.minigame_background_music)
+        backgroundMusicPlayer?.isLooping = true
+        backgroundMusicPlayer?.start()
 
         val images = mutableListOf(cardimage1, cardimage2, cardimage3, cardimage4, cardimage5)
         images.addAll(images)
@@ -67,6 +73,8 @@ class MemoryCards : AppCompatActivity() {
             Toast.makeText(this, "¡Movimiento inválido!", Toast.LENGTH_SHORT).show()
             return
         }
+
+        playFlipCardSound() // <-- Agrega esta línea aquí
 
         if (indexOfSingleSelectedCard == null){
             restoreCards()
@@ -119,20 +127,76 @@ class MemoryCards : AppCompatActivity() {
         val btnCancel = dialogLayout.findViewById<AppCompatButton>(R.id.btnCancel)
 
         lateinit var dialog: AlertDialog
+        var soundPlayer: MediaPlayer? = MediaPlayer.create(this, R.raw.stop) // Cambiamos la declaración a var y le damos un valor inicial
 
         btnExit.setOnClickListener {
+            try {
+                soundPlayer?.let {
+                    if (it.isPlaying) {
+                        it.stop()
+                    }
+                    it.release()
+                }
+                soundPlayer = null
+            } catch (e: IllegalStateException) {
+                // Si llegamos aquí, significa que el MediaPlayer ha sido liberado antes de que pudiéramos interactuar con él
+                soundPlayer = null
+            }
+
+            try {
+                backgroundMusicPlayer?.let {
+                    if (it.isPlaying) {
+                        it.stop()
+                    }
+                    it.release()
+                }
+                backgroundMusicPlayer = null
+            } catch (e: IllegalStateException) {
+                // De nuevo, si llegamos aquí, significa que el MediaPlayer ha sido liberado antes de que pudiéramos interactuar con él
+                backgroundMusicPlayer = null
+            }
+
             val intent = Intent(this, PrincipalMenu::class.java)
             startActivity(intent)
             finish()
         }
 
         btnCancel.setOnClickListener {
+            soundPlayer?.let {
+                if (it.isPlaying) {
+                    it.stop()
+                }
+                it.release()
+            }
+            soundPlayer = null
             dialog.dismiss()
         }
+
+        soundPlayer?.setOnCompletionListener { it.release() }
+        soundPlayer?.start()
 
         builder.setView(dialogLayout)
         dialog = builder.create()
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        // 3. Detén la música en onDestroy
+        backgroundMusicPlayer?.let {
+            if (it.isPlaying) {
+                it.stop()
+            }
+            it.release()
+        }
+        backgroundMusicPlayer = null
+    }
+
+    private fun playFlipCardSound() {
+        val mediaPlayer = MediaPlayer.create(this, R.raw.flip_card)
+        mediaPlayer.setOnCompletionListener { it.release() }
+        mediaPlayer.start()
     }
 }

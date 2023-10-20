@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class RegisterForm extends AppCompatActivity {
+    private MediaPlayer soundPlayer;
     private EditText txtName;
 
     @Override
@@ -98,9 +100,20 @@ public class RegisterForm extends AppCompatActivity {
         builder.setView(view);
         final AlertDialog alertDialog = builder.create();
 
+        soundPlayer = MediaPlayer.create(this, R.raw.stop);
+        soundPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+                soundPlayer = null;
+            }
+        });
+        soundPlayer.start();
+
         btnUnderstand.findViewById(R.id.btnUnderstand).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopAndReleasePlayer();
                 finish();
             }
         });
@@ -108,6 +121,7 @@ public class RegisterForm extends AppCompatActivity {
         btnCancel.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopAndReleasePlayer();
                 alertDialog.dismiss();
             }
         });
@@ -116,5 +130,13 @@ public class RegisterForm extends AppCompatActivity {
             alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         alertDialog.show();
+    }
+
+    private void stopAndReleasePlayer() {
+        if (soundPlayer != null) {
+            soundPlayer.stop();
+            soundPlayer.release();
+            soundPlayer = null;
+        }
     }
 }

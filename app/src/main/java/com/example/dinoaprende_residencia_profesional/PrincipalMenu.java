@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -23,6 +24,8 @@ public class PrincipalMenu extends AppCompatActivity {
     TextView lblUserName, lblScore;
     DatabaseHelper db;
     private SharedPreferences sharedPreferences;
+    private MediaPlayer soundPlayer;
+    private MediaPlayer backgroundMusicPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,19 +109,21 @@ public class PrincipalMenu extends AppCompatActivity {
                 if (dino != null) {
                     int dinoRequiredScore = dino.getDinoScore();
 
-                    // Comprueba si el dinosaurio estaba previamente bloqueado pero ahora no:
                     boolean wasLocked = sharedPreferences.getBoolean("DinoLocked" + i, true);
                     boolean isNowUnlocked = score >= dinoRequiredScore;
 
                     if (wasLocked && isNowUnlocked) {
                         showDinoUnlockedDialog(dino);
-                        // Guarda que el dinosaurio ha sido desbloqueado
                         sharedPreferences.edit().putBoolean("DinoLocked" + i, false).apply();
                     }
                 }
             }
         }
         cursor.close();
+
+        backgroundMusicPlayer = MediaPlayer.create(PrincipalMenu.this, R.raw.jurassic_world_song2);
+        backgroundMusicPlayer.setLooping(true);
+        backgroundMusicPlayer.start();
     }
 
     private void showDinoUnlockedDialog(DinoFriend dino) {
@@ -133,14 +138,38 @@ public class PrincipalMenu extends AppCompatActivity {
         int resID = getResources().getIdentifier(dino.getDinoPhoto(), "drawable", getPackageName());
         imgDinoFriendPhoto.setImageResource(resID);
 
+        soundPlayer = MediaPlayer.create(this, R.raw.new_dino_friend);
+        soundPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+                soundPlayer = null;
+            }
+        });
+        soundPlayer.start();
+
         Button btnUnderstand = dialog.findViewById(R.id.btnUnderstand);
         btnUnderstand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (soundPlayer != null) {
+                    soundPlayer.stop();
+                    soundPlayer.release();
+                    soundPlayer = null;
+                }
                 dialog.dismiss();
             }
         });
 
         dialog.show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (backgroundMusicPlayer != null) {
+            backgroundMusicPlayer.release();
+            backgroundMusicPlayer = null;
+        }
     }
 }
