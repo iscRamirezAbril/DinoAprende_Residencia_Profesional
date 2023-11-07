@@ -41,9 +41,9 @@
 
     <ImageView
         android:id="@+id/imgDecoration2"
-        android:layout_width="395dp"
-        android:layout_height="358dp"
-        android:scaleType="centerCrop"
+        android:layout_width="223dp"
+        android:layout_height="181dp"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
