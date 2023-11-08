@@ -4,7 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InstructionsPuzzleMinigame">
+    tools:context=".InstructionsQuizMinigame">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnStartQuiz"
+        android:layout_width="514dp"
+        android:layout_height="94dp"
+        android:background="@drawable/borderbutton1"
+        android:fontFamily="casual"
+        android:text="Comenzar"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955" />
 
     <TextView
         android:id="@+id/lblInstructions"
@@ -13,6 +29,7 @@
         android:fontFamily="casual"
         android:text="Instrucciones:"
         android:textAllCaps="false"
+        android:textColor="#000000"
         android:textSize="70sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,15 +49,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.272"
-        app:srcCompat="@drawable/mascota_oficial6" />
+        app:srcCompat="@drawable/mascota_oficial2" />
 
     <TextView
         android:id="@+id/lblInstructionsDescription1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
-        android:text="Arrastra las piezas en el lugar correcto."
-        android:textSize="48sp"
+        android:text="Elije el cuestionario que deseés y contesta las 5 preguntas."
+        android:textColor="#000000"
+        android:textSize="45sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,8 +72,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
-        android:text="¡Arma el rompecabezas para ganar 5 puntos!"
-        android:textSize="48sp"
+        android:text="Cada una te dará 1 punto si la respondes correctamente."
+        android:textColor="#000000"
+        android:textSize="45sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +88,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="casual"
         android:text="¿Estás listo?"
+        android:textColor="#020202"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,21 +110,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043"
         app:srcCompat="@drawable/ic_close_2" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnStartPuzzle"
-        android:layout_width="514dp"
-        android:layout_height="94dp"
-        android:background="@drawable/borderbutton1"
-        android:fontFamily="casual"
-        android:text="Comenzar"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
