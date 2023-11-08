@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo0"
+    tools:context=".AboutThisApp">
+
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="96dp"
+        android:layout_height="93dp"
+        android:background="@drawable/borderbutton2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044"
+        app:srcCompat="@drawable/ic_close_2" />
+
+    <ImageView
+        android:id="@+id/whiteBackround"
+        android:layout_width="1166dp"
+        android:layout_height="554dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/white_background" />
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="240dp"
+        android:layout_height="164dp"
+        android:layout_marginStart="22dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="@+id/whiteBackround"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.255"
+        app:srcCompat="@drawable/dino_aprende_logo2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="¿De qué trata la aplicación?"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284" />
+
+    <TextView
+        android:id="@+id/lblDescription"
+        android:layout_width="1059dp"
+        android:layout_height="293dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="casual"
+        android:text="Descubre DinoAprende, la aplicación perfecta para los más pequeños. Incluye 3 divertiidos minijuegos pensados para estimular y entretener: \n1. Encuestas Matemáticas: Permite a los niños seleccionar su nivel de dificultad y enfrentar divertidos retos matemáticos, como sumas o restas. \n2. Dino-Memoria: Desafía su memoria con el objetivo de encontrar 5 pares de cartas idénticas.\n3. Rompecabezas: Con 4 vibrantes diseños a escoger, cada pequeño encontrará el desafío visual que más le entusiasme. \n¡Deseamos que DinoAprende brinde horas de diversión y aprendizaje a tu niño!"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/whiteBackround"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBackround"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="@+id/whiteBackround"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.898" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
