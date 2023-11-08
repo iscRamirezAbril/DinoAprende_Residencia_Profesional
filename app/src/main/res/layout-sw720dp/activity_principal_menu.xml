@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imgImageDecorative"
-        android:layout_width="125dp"
-        android:layout_height="115dp"
+        android:layout_width="298dp"
+        android:layout_height="252dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,44 +20,44 @@
 
     <ImageButton
         android:id="@+id/btnQuizMinigame"
-        android:layout_width="101dp"
-        android:layout_height="100dp"
+        android:layout_width="223dp"
+        android:layout_height="221dp"
         android:layout_marginEnd="164dp"
         android:background="@drawable/borderbutton7"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnCardMinigame"
-        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794"
+        app:layout_constraintVertical_bias="0.787"
         app:srcCompat="@drawable/mascota_oficial1" />
 
     <ImageButton
         android:id="@+id/btnCardMinigame"
-        android:layout_width="101dp"
-        android:layout_height="100dp"
+        android:layout_width="223dp"
+        android:layout_height="221dp"
         android:background="@drawable/borderbutton7"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794"
+        app:layout_constraintVertical_bias="0.786"
         app:srcCompat="@drawable/mascota_oficial5" />
 
     <ImageButton
         android:id="@+id/btnPuzzleMinigame"
-        android:layout_width="101dp"
-        android:layout_height="100dp"
+        android:layout_width="223dp"
+        android:layout_height="221dp"
         android:background="@drawable/borderbutton7"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="@+id/btnCardMinigame"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794"
+        app:layout_constraintVertical_bias="0.786"
         app:srcCompat="@drawable/mascota_oficial6" />
 
     <TextView
@@ -68,14 +68,13 @@
         android:text="¿Qué te gustaría jugar hoy?"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.502" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/lblWelcomeTitle"
@@ -85,7 +84,7 @@
         android:text="¡Bienvenido!"
         android:textAlignment="center"
         android:textColor="#020202"
-        android:textSize="34sp"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,8 +95,8 @@
 
     <ImageView
         android:id="@+id/imgUserInfoBackground"
-        android:layout_width="115dp"
-        android:layout_height="153dp"
+        android:layout_width="216dp"
+        android:layout_height="284dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.025"
@@ -108,8 +107,8 @@
 
     <ImageView
         android:id="@+id/imgUserProfilePicture"
-        android:layout_width="65dp"
-        android:layout_height="66dp"
+        android:layout_width="112dp"
+        android:layout_height="124dp"
         android:layout_margin="5dp"
         android:scaleType="fitXY"
         app:cardCornerRadius="20dp"
@@ -118,7 +117,7 @@
         app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079"
+        app:layout_constraintVertical_bias="0.09"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -129,13 +128,14 @@
         android:fontFamily="casual"
         android:text="TextView"
         android:textAlignment="center"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imgUserInfoBackground"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="@+id/imgUserInfoBackground"
         app:layout_constraintTop_toTopOf="@+id/imgUserProfilePicture"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.091" />
 
     <TextView
         android:id="@+id/lblScore"
@@ -146,13 +146,14 @@
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#FF9800"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imgUserInfoBackground"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="@+id/imgUserInfoBackground"
         app:layout_constraintTop_toTopOf="@+id/lblUserName"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.035" />
 
     <TextView
         android:id="@+id/lblQuizMinigame"
@@ -163,7 +164,7 @@
         android:text="Quiz\nmatemático"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -181,7 +182,7 @@
         android:text="Dino-Memoria"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -198,19 +199,19 @@
         android:text="Rompecabezas"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPuzzleMinigame"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.019" />
 
     <ImageButton
         android:id="@+id/btnDinoFriends"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
+        android:layout_width="121dp"
+        android:layout_height="119dp"
         android:background="@drawable/borderbutton7"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
