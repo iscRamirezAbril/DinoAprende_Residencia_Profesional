@@ -306,12 +306,11 @@ public class Quiz extends AppCompatActivity {
         btnExit.findViewById(R.id.btnExit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                stopAndReleaseMediaPlayer();
-                stopBackgroundMusic();
-                onPause();
+                stopAndReleaseMediaPlayer(); // Detener y liberar el reproductor antes de salir de la actividad
+                onPause(); // Llamada a onPause() aquí puede no ser necesaria
                 Intent intent = new Intent(Quiz.this, PrincipalMenu.class);
                 startActivity(intent);
+                finish(); // Se recomienda llamar a finish() después de startActivity() si ya no necesitas la actividad actual
             }
         });
 
