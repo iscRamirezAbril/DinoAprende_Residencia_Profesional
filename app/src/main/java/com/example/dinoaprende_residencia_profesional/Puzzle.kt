@@ -5,12 +5,14 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
+import android.os.Build
 import android.os.Bundle
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -24,8 +26,9 @@ enum class SwipeDirections {
 }
 
 class Puzzle : AppCompatActivity() {
-    private var soundPlayer: MediaPlayer? = null
+    private lateinit var soundPlayer: MediaPlayer
     private var backgroundMusicPlayer: MediaPlayer? = null
+
     companion object {
         private const val TOTAL_COLUMNS = 3
         private const val DIMENSIONS = TOTAL_COLUMNS * TOTAL_COLUMNS
@@ -37,7 +40,7 @@ class Puzzle : AppCompatActivity() {
     private val tileListIndexes = mutableListOf<Int>()
     private var puzzleIndex: Int = 0
 
-    private val isSolved: Boolean get(){
+    private val isSolved: Boolean get() {
         var solved = false
         for (i in tileListIndexes.indices) {
             if (tileListIndexes[i] == i) {
@@ -60,8 +63,8 @@ class Puzzle : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_puzzle)
 
         backgroundMusicPlayer = MediaPlayer.create(this, R.raw.minigame_background_music)
@@ -71,6 +74,7 @@ class Puzzle : AppCompatActivity() {
         // Recoge el índice del rompecabezas del intent
         puzzleIndex = intent.getIntExtra("PUZZLE_INDEX", 0)
 
+        soundPlayer = MediaPlayer()
         init()
         scrambleTileBoard()
         setTileBoardDimensions()
@@ -244,77 +248,75 @@ class Puzzle : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onBackPressed() {
-        showDialog()
+        if (!isFinishing) {
+            showDialog()
+        }
     }
 
+    private lateinit var dialog: AlertDialog
+
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun showDialog() {
-        val builder = AlertDialog.Builder(this)
-        val inflater = layoutInflater
-        val dialogLayout = inflater.inflate(R.layout.dialog_custom4, null)
+        if (!isFinishing) {
+            val builder = AlertDialog.Builder(this)
+            val inflater = layoutInflater
+            val dialogLayout = inflater.inflate(R.layout.dialog_custom4, null)
 
-        val btnExit = dialogLayout.findViewById<AppCompatButton>(R.id.btnExit)
-        val btnCancel = dialogLayout.findViewById<AppCompatButton>(R.id.btnCancel)
+            val btnExit = dialogLayout.findViewById<AppCompatButton>(R.id.btnExit)
+            val btnCancel = dialogLayout.findViewById<AppCompatButton>(R.id.btnCancel)
 
-        lateinit var dialog: AlertDialog
-        var soundPlayer: MediaPlayer? = MediaPlayer.create(this, R.raw.stop) // Cambiamos la declaración a var y le damos un valor inicial
+            lateinit var dialog: AlertDialog
 
-        btnExit.setOnClickListener {
-            try {
-                soundPlayer?.let {
-                    if (it.isPlaying) {
-                        it.stop()
+            btnExit.setOnClickListener {
+                try {
+                    soundPlayer.reset()
+                    soundPlayer.setDataSource(resources.openRawResourceFd(R.raw.stop))
+                    soundPlayer.prepare()
+                    soundPlayer.start()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+                try {
+                    backgroundMusicPlayer?.let {
+                        if (it.isPlaying) {
+                            it.stop()
+                        }
+                        it.release()
                     }
-                    it.release()
+                    backgroundMusicPlayer = null
+                } catch (e: IllegalStateException) {
+                    backgroundMusicPlayer = null
                 }
-                soundPlayer = null
-            } catch (e: IllegalStateException) {
-                // Si llegamos aquí, significa que el MediaPlayer ha sido liberado antes de que pudiéramos interactuar con él
-                soundPlayer = null
+
+                val intent = Intent(this, PrincipalMenu::class.java)
+                startActivity(intent)
+                finish()
+                dialog.dismiss()
             }
 
-            try {
-                backgroundMusicPlayer?.let {
-                    if (it.isPlaying) {
-                        it.stop()
-                    }
-                    it.release()
-                }
-                backgroundMusicPlayer = null
-            } catch (e: IllegalStateException) {
-                // De nuevo, si llegamos aquí, significa que el MediaPlayer ha sido liberado antes de que pudiéramos interactuar con él
-                backgroundMusicPlayer = null
+            btnCancel.setOnClickListener {
+                soundPlayer.stop()
+                dialog.dismiss()
             }
 
-            val intent = Intent(this, PrincipalMenu::class.java)
-            startActivity(intent)
-            finish()
+            soundPlayer.setOnCompletionListener {
+                soundPlayer.reset()
+            }
+
+            builder.setView(dialogLayout)
+            dialog = builder.create()
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.show()
         }
-
-        btnCancel.setOnClickListener {
-            soundPlayer?.let {
-                if (it.isPlaying) {
-                    it.stop()
-                }
-                it.release()
-            }
-            soundPlayer = null
-            dialog.dismiss()
-        }
-
-        soundPlayer?.setOnCompletionListener { it.release() }
-        soundPlayer?.start()
-
-        builder.setView(dialogLayout)
-        dialog = builder.create()
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.show()
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        soundPlayer.release()
 
-        // 3. Detén la música en onDestroy
         backgroundMusicPlayer?.let {
             if (it.isPlaying) {
                 it.stop()
