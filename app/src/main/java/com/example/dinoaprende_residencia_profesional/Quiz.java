@@ -276,9 +276,6 @@ public class Quiz extends AppCompatActivity {
         finish();
 
         updateScoreInDatabase(score);
-
-        startActivity(resultIntent);
-        finish();
     }
 
     private void updateScoreInDatabase(int score) {
@@ -303,6 +300,7 @@ public class Quiz extends AppCompatActivity {
         btnExit.findViewById(R.id.btnExit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 stopAndReleaseMediaPlayer();
                 stopBackgroundMusic();
                 Intent intent = new Intent(Quiz.this, PrincipalMenu.class);
