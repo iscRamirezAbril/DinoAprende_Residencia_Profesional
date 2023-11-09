@@ -32,9 +32,9 @@ public class MathQuizMenu extends AppCompatActivity {
         ImageButton btnStartMixed = findViewById(R.id.btnMixedQuiz);
         ImageButton btnClose = findViewById(R.id.btnClose4);
 
-        ArrayAdapter<String> difficultyAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, Question.getAllDifficultyLevels());
+        ArrayAdapter<String> difficultyAdapter = new ArrayAdapter<String>(this, R.layout.custom_spinner_item, Question.getAllDifficultyLevels());
         difficultyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         spinnerDifficulty.setAdapter(difficultyAdapter);
 
         btnClose.setOnClickListener(new View.OnClickListener() {
