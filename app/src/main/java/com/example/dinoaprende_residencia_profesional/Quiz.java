@@ -211,6 +211,12 @@ public class Quiz extends AppCompatActivity {
         }
     }
 
+    private void stopCountDownTimer() {
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+    }
+
     private void checkAnswer() {
         countDownTimer.cancel();
         if (selectedOption == currentQuestion.getAnswerNr()){
@@ -303,6 +309,7 @@ public class Quiz extends AppCompatActivity {
                 finish();
                 stopAndReleaseMediaPlayer();
                 stopBackgroundMusic();
+                onPause();
                 Intent intent = new Intent(Quiz.this, PrincipalMenu.class);
                 startActivity(intent);
             }
@@ -366,6 +373,14 @@ public class Quiz extends AppCompatActivity {
         super.onStop();
         stopAndReleaseMediaPlayer();
         stopBackgroundMusic();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        stopCountDownTimer();
+        stopBackgroundMusic();
+        stopAndReleaseMediaPlayer();
     }
 
     private void stopBackgroundMusic() {
