@@ -139,8 +139,7 @@ class MemoryCards : AppCompatActivity() {
                 }
                 soundPlayer = null
             } catch (e: IllegalStateException) {
-                // Si llegamos aquí, significa que el MediaPlayer ha sido liberado antes de que pudiéramos interactuar con él
-                soundPlayer = null
+                // Manejar la excepción si es necesario
             }
 
             try {
@@ -152,8 +151,7 @@ class MemoryCards : AppCompatActivity() {
                 }
                 backgroundMusicPlayer = null
             } catch (e: IllegalStateException) {
-                // De nuevo, si llegamos aquí, significa que el MediaPlayer ha sido liberado antes de que pudiéramos interactuar con él
-                backgroundMusicPlayer = null
+                // Manejar la excepción si es necesario
             }
 
             val intent = Intent(this, PrincipalMenu::class.java)
