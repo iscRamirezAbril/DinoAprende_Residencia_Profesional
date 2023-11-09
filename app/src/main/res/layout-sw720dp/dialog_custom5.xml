@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/customDialog5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/borderconstraintlayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDialog"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/borderbutton7">
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:fontFamily="casual"
+            android:gravity="center_horizontal"
+            android:text="¡Nuevo DinoAmigo desbloqueado!"
+            android:textAlignment="center"
+            android:textColor="#D9F1A7"
+            android:textSize="55sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/lblDinoFriendName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblDinoFriendName"
+            android:layout_width="427dp"
+            android:layout_height="169dp"
+            android:layout_marginBottom="196dp"
+            android:fontFamily="casual"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="¡Has desbloqueado a:\n ¡Bebé Blue, la velociraptor!"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/lblTitle"
+            app:layout_constraintBottom_toTopOf="@id/imgDinoFriendPhoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgDinoFriendPhoto"
+            android:layout_width="214dp"
+            android:layout_height="199dp"
+            android:layout_marginTop="12dp"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblDinoFriendName"
+            app:srcCompat="@drawable/dino_friend1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUnderstand"
+            android:layout_width="229dp"
+            android:layout_height="57dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/borderbutton1"
+            android:fontFamily="casual"
+            android:text="Entendido"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgDinoFriendPhoto" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
