@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MemoryCards"
+    android:background="@drawable/fondo2">
+
+    <ImageButton
+        android:id="@+id/btnClose2"
+        android:layout_width="96dp"
+        android:layout_height="93dp"
+        android:background="@drawable/borderbutton2"
+        android:src="@drawable/ic_close_2"
+        android:contentDescription="NULL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939"
+        app:srcCompat="@drawable/huevito" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939"
+        app:srcCompat="@drawable/huevito" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939"
+        app:srcCompat="@drawable/huevito" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939"
+        app:srcCompat="@drawable/huevito" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939"
+        app:srcCompat="@drawable/huevito" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.674"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/huevito" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/huevito" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/huevito" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/huevito" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="187dp"
+        android:layout_height="273dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/borderbutton4"
+        android:contentDescription="NULL"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/huevito" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
