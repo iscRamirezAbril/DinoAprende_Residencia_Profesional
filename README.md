@@ -37,7 +37,8 @@ Antes de comenzar con el código, se trabajó un prototipo en Figma, en donde se
   <img src="https://github.com/iscRamirezAbril/DinoAprende_Residencia_Profesional/blob/master/pictures/img_dinoAprende_project.png" width = "500"/>
 </p>
 
-Debido a que la interfaz de la aplicación es muy extensa, se adjunta a continuación el documento del proyecto, donde no sólo se explican cada una de las funcionalidades programadas, sino también, se adjunta una breve investigación previa al desarrollo.
+Debido a que la interfaz de la aplicación es muy extensa, se adjunta a continuación el documento del proyecto, donde no sólo se explican cada una de las funcionalidades programadas, sino también, se adjunta una breve investigación previa al desarrollo 
+[aquí](https://tectijuanabc-my.sharepoint.com/:b:/g/personal/l19211715_tijuana_tecnm_mx/EcqegD0aZCFEvP3ftkKJWUABOSTh0TveV0bUkpTdIc-5Sw?e=RSTaWs).
 
 ### ----- Actividades ----- 📝
 - [x] Diseño del logo para la aplicación.
